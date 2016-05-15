@@ -1,0 +1,204 @@
+/*    --------------------------------------------------
+	:: Login Section
+	-------------------------------------------------- */
+#login {
+    padding-top: 50px
+}
+#login .form-wrap {
+    width: 350px;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 400px) {
+    #login .form-wrap {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #logo-login{
+        width: 100%;
+    }
+}
+
+.retrieve-table {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: table;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.retrieve-table  img{
+    margin: 0 auto;
+    display: table;
+}
+
+.retrieve-table h2 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #e5e5e5;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    color: #333;
+    display: block;
+    font-size: 21px;
+    line-height: inherit;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#login h1 {
+    color: #242121;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+    margin: 0px;
+}
+#login .form-group {
+    margin-bottom: 25px;
+}
+#login .checkbox {
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#login .checkbox.show:before {
+    content: '\e013';
+    color: #1fa67b;
+    font-size: 17px;
+    margin: 1px 0 0 3px;
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Glyphicons Halflings';
+}
+#login .checkbox .character-checkbox {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    display: inline-block;
+}
+#login .checkbox .label {
+    color: #6d6d6d;
+    font-size: 13px;
+    font-weight: normal;
+}
+#login .btn.btn-custom {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+#login .forget {
+    font-size: 13px;
+    text-align: center;
+    display: block;
+}
+
+/*    --------------------------------------------------
+	:: Inputs & Buttons
+	-------------------------------------------------- */
+.form-control {
+    color: #212121;
+}
+.btn-custom {
+    color: #fff;
+    background-color: #B83039;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+    color: #fff;
+}
+
+/*    --------------------------------------------------
+    :: Footer
+	-------------------------------------------------- */
+#footer {
+    color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+#footer p {
+    margin-bottom: 0;
+}
+#footer a {
+    color: inherit;
+}
+
+.topo-login{
+    margin-bottom: 20px;
+    background: #fff;
+    /*border-top: 1px solid #b32f37;*/
+    border-bottom: 1px solid #b32f37;
+    /*border-top: 1px solid #b32f37*/
+    height: 20px;
+    width: 100%;
+    color: #242121;
+    display: table;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.topo-login p{
+    padding-top: 10px;
+}
+
+.form-wrap p{
+    color: #f56531;
+    font-weight: bold;
+    line-height: 10px;
+}
+
+.form-wrap p::before{
+    content: "* ";
+}
+
+.topo-login img{
+    width: 70px;
+    margin: 10px 30px 10px;
+}
+
+.cycle-slideshow{
+    display: table;
+    margin: 0 auto;
+}
+
+.marcas{
+    height: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    display: block;
+}
+
+.marcas ul li{
+    height: 40px;
+    width: 60px;
+    overflow: hidden;
+    margin: 10px;
+    display: inline;
+    float: left;
+}
+
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.topo-login span{
+    height: 40px;
+    line-height: 40px;
+    vertical-align: bottom;
+}

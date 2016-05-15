@@ -1,0 +1,83 @@
+*, h2, table{
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
+}
+
+.retrieve-table{
+    color: #222;
+}
+
+.retrieve-assuntos h2,
+.retrieve-planta-table h2,
+.retrieve-periodo-table h2,
+.retrieve-usuarios-table h2,
+.retrieve-usuarios h2, 
+.retrieve-ordem-producao h2, 
+.retrieve-componentes-produto h2, 
+.retrieve-table h2,
+.retrieve-linha-producao h2{
+	margin-top: 0;
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -use-text-color -use-text-color #e5e5e5;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    color: #b83039;
+    display: block;
+    font-size: 18px;
+    line-height: inherit;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 100%;
+    border-color: #e5e5e5;
+    text-align: center;
+    font-weight: normal;
+}
+
+table {
+    line-height: 24px;
+    margin: 30px auto;
+    text-align: justify;
+    border: none;
+    width: 100%;
+}   
+
+th {
+    font-size: 14px;
+    background: #eee;
+    color: #333;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}
+.table, .table th, .table td { 
+    /*border: 1px solid #ddd; */
+    height: 15px; 
+    font-size: 15px;
+    padding: 5px;
+} 
+
+.glyphicon{
+    color: #333;
+}
+
+.center {
+    text-align: center;
+}
+
+.table tbody tr td:first-child{
+    text-align: center;
+}
+
+.body-pdf, .body-pdf p, .body-pdf span, .body-pdf h2, .body-pdf h5, .body-pdf div{
+    height: 15px; 
+    font-size: 15px;
+    text-align: justify;
+    font-family: sans-serif;
+    font-weight: 300;
+}

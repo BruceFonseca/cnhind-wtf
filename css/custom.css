@@ -60,6 +60,18 @@ html { height: 100%;}
     margin-right: -220px;
 }
 
+#wrapper.inicial #sidebar-wrapper {
+    width: 220px;
+}
+
+#sidebar-wrapper.inicial{
+  padding-left: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
 /*-------------------------------*/
 /*     Sidebar nav styles        */
 /*-------------------------------*/
@@ -347,4 +359,24 @@ color: #fff;
 
 .dropdown-menu{
   top: 40px;
+}
+
+
+/*-------------------------------*/
+/*            Conveitos Home     */
+/*-------------------------------*/
+.conceitos {
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 200px;
+    margin-left: 15px;
+    overflow: hidden;
+    padding-bottom: 5px;
+    width: 330px;
+    margin-bottom: 15px;
+}
+
+.conceitos .panel-heading {
+    font-weight: bold;
 }

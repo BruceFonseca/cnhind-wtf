@@ -10,7 +10,6 @@ $this->load->view('includes/header_site');
 ?>
 
    <div id="wrapper">
-        <div class="overlay"></div>
     
         <!-- Sidebar -->
         <?php $this->load->view('includes/menu_sidebar'); ?>
@@ -26,7 +25,6 @@ $this->load->view('includes/header_site');
             <div class="container">
                 <div class="row">
                     <div class="col-lg-11 col-lg-offset-0">
-                        <h1>Working Time Flexibility</h1>
                         <?php 
                         if( isset($pasta) && isset($tela)):
                                 $this->load->view('transactions/' .$pasta .'/'.$tela);

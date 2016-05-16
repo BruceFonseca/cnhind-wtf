@@ -1,5 +1,5 @@
 <?php 
-    if($this->session->userdata('session_plantas'))
+    if($this->session->userdata('session_menu_sidebar'))
     {
         $menu_planta = $this->session->userdata('session_menu_sidebar');
     }

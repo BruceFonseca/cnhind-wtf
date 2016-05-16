@@ -24,8 +24,7 @@ class Home extends CI_Controller {
             $this->user_menu_model->set_session_menu_header($role);
             $this->user_menu_model->set_session_menu_sidebar();
 
-            //carrega a home
-            $this->load->view('home');
+            redirect('assunto/conceito');
         }
         else
         {

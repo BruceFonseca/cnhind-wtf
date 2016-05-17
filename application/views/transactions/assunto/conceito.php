@@ -4,7 +4,7 @@ foreach ($status as $linha):
 	
 	echo 
     "
-    <a href=  " . base_url('assunto/imprimir/'.$linha->id_assunto) . "  title=''>
+    <a href=  " . base_url('assunto/get_conceito/'.$linha->id_assunto) . "  title=''>
 		<div class='panel panel-default conceitos'>
 		  <div class='panel-heading'> ". $linha->dsc_assunto . "</div>
 		  <div class='panel-body'>

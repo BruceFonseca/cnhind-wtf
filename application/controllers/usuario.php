@@ -127,6 +127,12 @@ class Usuario extends CI_Controller{
         // pd($id);
     }
 
+    public function delete(){
+        $id = $this->uri->segment(3);
+
+        $this->usuario_model->do_delete($id);
+    }
+
     public function  trocar_senha(){ 
 
         if($this->input->post('nova-senha')){

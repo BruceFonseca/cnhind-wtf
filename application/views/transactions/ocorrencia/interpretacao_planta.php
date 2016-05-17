@@ -6,9 +6,9 @@ $this->table->set_heading('Item', 'Descrição', 'Anexo');
 foreach ($interpretacao as $linha):
 
     if( strlen($linha->dsc_file)>0){
-            $file = '<a target="_blank" text-align="center" href="'.base_url().'uploads/'. $linha->dsc_file .'" >Arquivo na Íntegra</a>';
+            $file = '<a target="_blank" text-align="center" href="'.base_url('uploads/'. $linha->dsc_file) .'" >Arquivo na Íntegra</a>';
     }else{
-        $file ="-";
+        $file ="<center>-</center>";
     }
 
     $this->table->add_row(
@@ -21,7 +21,7 @@ endforeach;
 echo '<div class="buttons-controle">';
 echo 
         '
-        <a class="btn-print" data-toggle="tooltip" data-placement="top" data-original-title="Imprimir" target="_blank" href= "'. base_url().'pdfgerar/pdf_ocorrencia/'. $interpretacao[0]->id_ocorrencia . '">
+        <a class="btn-print" data-toggle="tooltip" data-placement="top" data-original-title="Imprimir" target="_blank" href= "'. base_url('pdfgerar/pdf_ocorrencia/'. $interpretacao[0]->id_ocorrencia) . '">
             <button type="button" class="btn btn-default" id="">
                 <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
             </button>
@@ -30,7 +30,7 @@ echo
     
     echo 
         '
-        <a class="btn-download" data-toggle="tooltip" data-placement="top" data-original-title="Salvar em PDF" target="_blank" href= "'. base_url().'pdfgerar/pdf_ocorrencia/'. $interpretacao[0]->id_ocorrencia . '">
+        <a class="btn-download" data-toggle="tooltip" data-placement="top" data-original-title="Salvar em PDF" target="_blank" href= "'. base_url('pdfgerar/pdf_ocorrencia/'. $interpretacao[0]->id_ocorrencia) . '">
             <button type="button" class="btn btn-default" id="">
                 <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
             </button>
@@ -54,33 +54,5 @@ echo '</div>';
 
 ?>
 
-<script>
-$(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-});
-
-    $('.btn-print').on('click', function(){
-        var controller = $('.btn-print').attr('ctr');
-         printPdf(controller);
-    });
-
-    $('.btn-download').on('click', function(){
-        var controller = $('.btn-print').attr('ctr');
-        printPdf(controller);
-    });
-
-      function printPdf(url) {
-          
-          $.ajax({
-              url: url,
-              success: function(data) {
-                  var blob=new Blob([data]);
-                  var link=data;
-                  link.click();
-              }
-          });
-      }
-
-</script>
 
 

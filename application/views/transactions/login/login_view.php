@@ -111,23 +111,7 @@
                     // função que altera cor do menu
                     var url = window.location.href;
                     
-                    $('nav ul li a').each(function(i){
-                        href = $(this).attr('href');
-                        if(url == href){
-                            $(this).css('color','#ff7900');
-                        }
-                    });
-                    $('.cycle-slideshow').cycle({
-                        fx:     'fade', 
-                        speed:   300, 
-                        timeout: 2000, 
-                        pause:   1,
-                        slideExpr: '.slide_item',
-                        slideResize: 0
-                    });
-                    $('header .icon-menu i').on('click', function(){
-                        $('header nav').slideToggle();
-                    });
+                    
                 });
 
                 $('.reset-senha').hide();

@@ -116,7 +116,7 @@ class Pdfgerar extends CI_Controller{
             date_default_timezone_set('America/Sao_Paulo');//define o timezone
             setlocale(LC_ALL, NULL);
             setlocale(LC_ALL, 'pt_BR');  
-            $pdf->SetFooter('COE - Flexibilidade' .'|{PAGENO}|'. date("d/m/Y")); // Add a footer for good measure <img class="emoji" draggable="false" alt="" src="https://s.w.org/images/core/emoji/72x72/1f609.png">
+            $pdf->SetFooter('Working Time Flexibility' .'|{PAGENO}|'. date("d/m/Y")); // Add a footer for good measure <img class="emoji" draggable="false" alt="" src="https://s.w.org/images/core/emoji/72x72/1f609.png">
             $pdf->WriteHTML($css, 1); // write the HTML into the PDF
             $pdf->WriteHTML($html); // write the HTML into the PDF
             $pdf->Output($pdfFilePath, 'F'); // save to file because we can

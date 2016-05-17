@@ -80,7 +80,7 @@ class Assunto extends CI_Controller{
         $this->load->view('transactions/assunto/conceito_itens', $dados);
     }
 
-    public function imprimir() {
+    public function get_conceito() {
         // é praticamente a mesma visão de RETRIEVE
         // porem será utilizado para exibir os conceitos 
         // dos acordos na primeira tab, assim que o sistema abrir
@@ -89,7 +89,7 @@ class Assunto extends CI_Controller{
         $id = $this->uri->segment(3);
 
         $dados = array(
-            'tela'=> 'imprimir',
+            'tela'=> 'get_conceito',
             'pasta'=> 'assunto',// é a pasta que está dentro de "telas". existe uma pasta para cada tabela a ser cadastrada
             'status'=> $this->assunto_model->get_conceito_by_id($id)->row(),
              );

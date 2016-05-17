@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> COE - FLEXIBILIDADE </title>
+        <title>Working Time Flexibility</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -14,7 +14,7 @@
         <table class="table-header" border="none" width="100%" style="border-bottom: 1px solid #ddd; vertical-align: bottom; font-family: sans-serif; font-size: 9pt; color: #222;">
         <tr>
         <td width="33%"></td>
-        <td width="33%" align="center"><h2 width="100%" align="center" vertical-align="bottom" color="#222">COE - Flexibilidade</h2></td>
+        <td width="33%" align="center"><h2 width="100%" align="center" vertical-align="bottom" color="#222">Working Time Flexibility</h2></td>
         <td width="33%" style="text-align: right;"><img width="60px" id="logo-login" src="<?php echo base_url('img/sistema/logotipo/logo.png' )?>"/></td>
         </tr>
         </table>

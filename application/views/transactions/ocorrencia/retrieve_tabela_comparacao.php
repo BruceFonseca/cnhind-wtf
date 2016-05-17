@@ -65,6 +65,9 @@ array_unshift($plan_per, 'Descrição');
 $this->table->set_heading($plan_per);
 
 $new_list = $this->table->make_columns($linha);
+$tmpl = array ( 'table_open'  => '<table class="table table-striped table-hover">' );
+
+$this->table->set_template($tmpl);
 
 
 
@@ -94,10 +97,3 @@ echo '<div class="retrieve-table">';
 		echo $this->table->generate($new_list);
 	echo '</div>';
 ?>
-	
-<script>
-$(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
-</script>

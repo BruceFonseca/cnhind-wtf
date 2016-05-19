@@ -419,6 +419,45 @@ color: #fff;
 
 
 
-/*.container{
-  background: #fff;
+/*forms*/
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col-lg-12{
+  padding-left: 0px;
+}
+.title-form,
+.content-form,
+.search-form{
+background: #fff;
+margin-bottom: 15px;
+padding: 15px;
+}
+
+.content-form label{
+  color: #555;
+  font-size: 14px;
+}
+.search-form{
+  border-bottom: solid 1px #ccc;
+}
+
+
+/*pagination*/
+/*.content-pagination nav ul{
+  float: right;
 }*/
+
+/*table*/
+.botoes_td a .btn{
+  font-size: 21px;
+}
+
+.table,
+.table tbody,
+.table tbody tr,
+.table tbody tr td{
+  vertical-align: middle;
+}

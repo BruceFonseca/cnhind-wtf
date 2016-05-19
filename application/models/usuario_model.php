@@ -19,6 +19,15 @@ class Usuario_model extends CI_Model{
             redirect(current_url());
         endif;
     }
+
+    public function do_delete($id){
+
+        //apaga dados de oc_cs_ocorrencias
+        $this->db->delete('users', array('id' => $id)); 
+
+        $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
+        redirect('usuario/retrieve');
+    }
     
     public function get_all(){
           $query = 'SELECT id, username, u.dsc_name as nome, dsc_matricula, r.dsc_name as role, ativo as status FROM users u

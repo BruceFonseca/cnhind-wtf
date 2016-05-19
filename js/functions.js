@@ -4,6 +4,7 @@ var url_base = "http://localhost/cnhind-wtf/";
 
 //sidebar
   $('#wrapper').addClass('toggled');
+  $('.container').css("margin-left","0px");
   
   var trigger = $('.hamburger'),
       overlay = $('.overlay'),
@@ -22,11 +23,13 @@ var url_base = "http://localhost/cnhind-wtf/";
         // overlay.hide();
         trigger.removeClass('is-open');
         trigger.addClass('is-closed');
+        $('.container').css("margin-left","auto");
         isClosed = false;
       } else {   
         // overlay.show();
         trigger.removeClass('is-closed');
         trigger.addClass('is-open');
+        $('.container').css("margin-left","0px");
         isClosed = true;
       }
   }
@@ -205,6 +208,33 @@ function gerar_tabela(){
           });
 
 } 
+
+//data table
+$('#retrieve-usuario').DataTable({
+        "language": {
+    "sEmptyTable": "Nenhum registro encontrado",
+    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sInfoThousands": ".",
+    "sLengthMenu": "_MENU_ resultados por página",
+    "sLoadingRecords": "Carregando...",
+    "sProcessing": "Processando...",
+    "sZeroRecords": "Nenhum registro encontrado",
+    "sSearch": "Pesquisar",
+    "oPaginate": {
+        "sNext": "Próximo",
+        "sPrevious": "Anterior",
+        "sFirst": "Primeiro",
+        "sLast": "Último"
+    },
+    "oAria": {
+        "sSortAscending": ": Ordenar colunas de forma ascendente",
+        "sSortDescending": ": Ordenar colunas de forma descendente"
+    }
+}
+    } );
 
 
 });//fim page

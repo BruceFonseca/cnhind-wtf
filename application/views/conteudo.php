@@ -24,7 +24,7 @@ $this->load->view('includes/header_site');
             </button>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-11 col-lg-offset-0">
+                    <div class="col-lg-12 col-lg-offset-0">
                         <?php 
                         if( isset($pasta) && isset($tela)):
                                 $this->load->view('transactions/' .$pasta .'/'.$tela);

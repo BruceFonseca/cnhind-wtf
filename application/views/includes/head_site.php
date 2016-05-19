@@ -18,6 +18,7 @@
         <!-- <link rel="stylesheet" type="text/css" href= <?php echo base_url("css/bootstrap-theme.css" )?> />-->
         <link rel="stylesheet" type="text/css" href= <?php echo base_url("css/custom.css" )?> />
         <link rel="stylesheet" type="text/css" href= <?php echo base_url("wysiwyg/summernote.css" )?> />
+
     </head>
 
     <body>

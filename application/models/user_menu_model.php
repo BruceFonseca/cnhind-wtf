@@ -30,7 +30,7 @@ class User_menu_model extends CI_Model{
                     INNER JOIN menu m ON um.id_menu = m.id_menu
                     INNER JOIN transactions t ON um.id_transactions = t.id_transactions
                     INNER JOIN user_roles r ON um.id_user_roles = r.id_user_roles
-					WHERE r.dsc_name = '$role'";
+					WHERE r.dsc_name = '$role' ORDER BY 2";
          
         return $this->db->query($query);
     }

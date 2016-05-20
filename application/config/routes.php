@@ -40,6 +40,11 @@
 
 $route['default_controller'] = "login";
 $route['acordos'] = "assunto/retrieve";
+$route['assuntos'] = "tratado/retrieve";
+$route['usuarios'] = "usuario/retrieve";
+$route['plantas'] = "planta/retrieve";
+$route['periodos'] = "periodo/retrieve";
+$route['interpretacoes'] = "ocorrencia/retrieve";
 $route['404_override'] = '';
 
 

@@ -32,7 +32,7 @@ class Usuario_model extends CI_Model{
             $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
         }
 
-        redirect('usuario/retrieve');
+        redirect('usuarios');
     }
     
     public function get_all(){

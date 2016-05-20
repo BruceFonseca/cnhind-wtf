@@ -22,10 +22,16 @@ class Usuario_model extends CI_Model{
 
     public function do_delete($id){
 
-        //apaga dados de oc_cs_ocorrencias
-        $this->db->delete('users', array('id' => $id)); 
+        $dbRet = $this->db->delete('users', array('id' => $id));
 
-        $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
+        if( !$dbRet ){
+            $this->session->set_flashdata('excluirNOK','Não foi possível excluir o registro. 
+                                         Existem ocorrência(s) que dependem deste acordo. 
+                                         É necessário excluir estas ocorrência(s) para continuar.');
+        }else{
+            $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
+        }
+
         redirect('usuario/retrieve');
     }
     

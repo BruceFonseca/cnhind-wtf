@@ -39,6 +39,15 @@ echo '<div class="row">';
 echo '<div class="row title-form"><h2>Administrar usuários</h2></div>'; 
 
     echo '<div class="row content-form">';
+
+        if($this->session->flashdata('excluirok')):
+            echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('excluirok').'</div>';
+        endif;
+
+        if($this->session->flashdata('excluirNOK')):
+            echo '<div class="alert alert-danger" role="alert">'.$this->session->flashdata('excluirNOK').'</div>';
+        endif;
+        
         echo'<a href="'.base_url('usuario/create').'"><label>Novo usuário</label>
             <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo usuário">
                 <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>

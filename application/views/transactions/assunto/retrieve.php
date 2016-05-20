@@ -16,7 +16,6 @@ $acoes = array('data' => '
     </button></a>
                                 ', 
     'class' => 'botoes_td');
-$id = array('data'=> $linha->id_assunto, 'class'=>'id-assunto');
 
     $this->table->add_row(
     $linha->dsc_assunto, 

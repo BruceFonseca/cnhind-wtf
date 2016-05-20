@@ -95,12 +95,13 @@ class Periodo extends CI_Controller{
          );
         
         $this->load->view('conteudo', $dados );
-
-        // $id = $this->input->post('id');
-
-        // pd($id);
     }
+    
+    public function delete(){
+            $id = $this->uri->segment(3);
 
+            $this->periodo_model->do_delete($id);
+    }
 
        
 }//fim da classe    

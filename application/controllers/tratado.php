@@ -124,6 +124,12 @@ class Tratado extends CI_Controller{
         // pd($id);
     }
 
+    public function delete(){
+        $id = $this->uri->segment(3);
+
+        $this->tratado_model->do_delete($id);
+    }
+
 
        
 }//fim da classe    

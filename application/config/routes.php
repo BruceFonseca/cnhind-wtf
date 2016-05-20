@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "login";
+$route['acordos'] = "assunto/retrieve";
 $route['404_override'] = '';
 
 

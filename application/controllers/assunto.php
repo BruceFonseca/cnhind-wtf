@@ -57,6 +57,12 @@ class Assunto extends CI_Controller{
         $this->load->view('conteudo', $dados);
     }
 
+    public function delete(){
+        $id = $this->uri->segment(3);
+
+        $this->assunto_model->do_delete($id);
+    }
+
     public function conceito() {
         // é praticamente a mesma visão de RETRIEVE
         // porem será utilizado para exibir os conceitos 

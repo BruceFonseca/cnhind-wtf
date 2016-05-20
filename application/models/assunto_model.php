@@ -33,6 +33,23 @@ class Assunto_model extends CI_Model{
             redirect(current_url());
         endif;
     }
+
+
+    public function do_delete($id){
+
+        //apaga dados de oc_cs_ocorrencias
+        $dbRet = $this->db->delete('assunto', array('id_assunto' => $id));
+
+        if( !$dbRet ){
+            $this->session->set_flashdata('excluirNOK','Não foi possível excluir o registro. 
+                                         Existem ocorrência(s) que dependem deste acordo. 
+                                         É necessário excluir estas ocorrência(s) para continuar.');
+        }else{
+            $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
+        }
+
+        redirect('assunto/retrieve');
+    }
     
     public function get_all(){
           $query = 'SELECT id_assunto, dsc_assunto FROM assunto ORDER BY dsc_assunto';     

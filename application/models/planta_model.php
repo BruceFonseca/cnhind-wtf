@@ -29,6 +29,22 @@ class Planta_model extends CI_Model{
             redirect(current_url());
         endif;
     }
+
+    public function do_delete($id){
+
+        //apaga dados de oc_cs_ocorrencias
+        $dbRet = $this->db->delete('planta', array('id_planta' => $id));
+
+        if( !$dbRet ){
+            $this->session->set_flashdata('excluirNOK','Não foi possível excluir o registro. 
+                                         Existem ocorrência(s) que dependem deste planta. 
+                                         É necessário excluir estas ocorrência(s) para continuar.');
+        }else{
+            $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
+        }
+
+        redirect('plantas');
+    }
     
     public function get_all(){
 

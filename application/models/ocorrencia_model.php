@@ -370,8 +370,8 @@ class Ocorrencia_model extends CI_Model{
         //apaga dados de ocorrencia
         $this->db->delete('ocorrencia', array('id_ocorrencia' => $id)); 
 
-        $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
-        redirect('ocorrencia/retrieve');
+        $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
+        redirect('interpretacoes');
     }
    
     

@@ -104,6 +104,12 @@ class Planta extends CI_Controller{
         // pd($id);
     }
 
+     public function delete(){
+            $id = $this->uri->segment(3);
+
+            $this->planta_model->do_delete($id);
+    }
+
 
        
 }//fim da classe    

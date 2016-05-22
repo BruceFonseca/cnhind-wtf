@@ -244,20 +244,17 @@ class Ocorrencia extends CI_Controller{
     
     public function delete(){
         $id = $this->uri->segment(3);
-
         $this->ocorrencia_model->do_delete($id);
     }
 
     public function  update(){   
-
-      
+ 
         // recebe o id do usuário através da URL
         $id = $this->uri->segment(3);
         $flash_data = NULL;
         
         if(isset($_POST['data'])) {
             $data = json_decode($_POST['data']);
-            // pd($data);
 
             $id_assunto = $data->dados_acordo->id_assunto;
             $id_planta  = $data->dados_acordo->id_planta;

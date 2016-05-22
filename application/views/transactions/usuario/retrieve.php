@@ -14,7 +14,7 @@ $acoes = array('data' => '
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Editar">
         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </button></a>
-    <a href="'.base_url('usuario/delete/'.$linha->id).'">
+    <a href="'.base_url('usuario/delete/'.$linha->id).'" class="delete-event">
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Excluir">
        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
     </button></a>

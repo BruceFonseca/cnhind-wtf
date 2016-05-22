@@ -8,7 +8,7 @@ $acoes = array('data' => '
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Editar">
         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </button></a>
-    <a href="'.base_url('periodo/delete/'.$linha->id_periodo).'">
+    <a href="'.base_url('periodo/delete/'.$linha->id_periodo).'" class="delete-event">
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Excluir">
        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
     </button></a>
@@ -39,7 +39,7 @@ if($this->session->flashdata('excluirNOK')):
 endif;
 
         echo'<a href="'.base_url('periodo/create').'"><label>Novo período</label>
-            <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo usuário">
+            <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo período">
                 <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
             </button></a><hr>';
     

@@ -10,7 +10,7 @@ $acoes = array('data' => '
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Editar">
         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </button></a>
-    <a href="'.base_url('assunto/delete/'.$linha->id_assunto).'">
+    <a href="'.base_url('assunto/delete/'.$linha->id_assunto).'"  class="delete-event">
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Excluir">
        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
     </button></a>
@@ -28,7 +28,7 @@ $this->table->set_template($tmpl);
 
 echo '<div class="row">';
 
-echo '<div class="row title-form"><h2>Administrar acordos</h2></div>'; 
+echo '<div class="row title-form"><h2>Administrar Acordos</h2></div>'; 
 
     echo '<div class="row content-form">';
     
@@ -42,7 +42,7 @@ if($this->session->flashdata('excluirNOK')):
 endif;
 
         echo'<a href="'.base_url('assunto/create').'"><label>Novo acordo</label>
-            <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo usuário">
+            <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo acordo">
                 <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
             </button></a><hr>';
     

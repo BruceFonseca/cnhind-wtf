@@ -209,6 +209,20 @@ function gerar_tabela(){
 
 } 
 
+//confirm delete
+$('.delete-event').on('click', function(e){
+  var link = $(this).attr('href');
+  
+  e.preventDefault();
+
+  intRetVar = confirm("Tem certeza que deseja excluir o registro permanentemente?");
+
+  if(intRetVar == true){
+    window.location.href = link;
+  }
+});
+
+
 //data table
 $('#retrieve-usuario').DataTable({
         "language": {

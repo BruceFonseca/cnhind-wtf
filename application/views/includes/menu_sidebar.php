@@ -17,7 +17,7 @@
             <a href="<?php echo base_url('working-time-flexibility') ?>">Home</a>
         </li>
         <li>
-            <a href="<?php  echo base_url('ocorrencia/comparacao') ?>">Comparações</a>
+            <a href="<?php  echo base_url('comparacoes') ?>">Comparações</a>
         </li>
 
         <?php foreach ($menu_planta as $menu): ?>

@@ -9,7 +9,7 @@ foreach ($status as $linha):
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Editar">
         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </button></a>
-    <a href="'.base_url('tratado/delete/'.$linha->id_tratado).'">
+    <a href="'.base_url('tratado/delete/'.$linha->id_tratado).'"  class="delete-event">
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Excluir">
        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
     </button></a>', 'class' => 'botoes_td');
@@ -40,7 +40,7 @@ if($this->session->flashdata('excluirNOK')):
 endif;
 
         echo'<a href="'.base_url('tratado/create').'"><label>Novo Assunto</label>
-            <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo usuário">
+            <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar novo assunto">
                 <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
             </button></a><hr>';
     

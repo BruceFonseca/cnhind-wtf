@@ -28,7 +28,7 @@ class Verifylogin extends CI_Controller {
         {
             // if( $this->check_database($username, $password) != FALSE){
                 //Go to private area
-                redirect('home', 'refresh');
+                redirect('working-time-flexibility', 'refresh');
             // }
         }
 

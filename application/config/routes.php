@@ -45,6 +45,7 @@ $route['usuarios'] = "usuario/retrieve";
 $route['plantas'] = "planta/retrieve";
 $route['periodos'] = "periodo/retrieve";
 $route['interpretacoes'] = "ocorrencia/retrieve";
+$route['comparacoes'] = "ocorrencia/comparacao";
 $route['working-time-flexibility'] = "assunto/conceito";
 $route['404_override'] = '';
 

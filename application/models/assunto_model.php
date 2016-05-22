@@ -6,8 +6,8 @@ class Assunto_model extends CI_Model{
         
         if ($dados != NULL):
             $this->db->insert('assunto',$dados);
-            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
-            redirect('assunto/create');
+            $this->session->set_flashdata('excluirok','Cadastro efetuado com sucesso');
+            redirect('acordos');
         endif;
             
     }
@@ -23,14 +23,12 @@ class Assunto_model extends CI_Model{
                     SET 
                     dsc_assunto = ' . "'" . $dados['dsc_assunto'] . "' ," .
                    ' dsc_conceito = ' . "'" . addslashes($dados['dsc_conceito']). "' ," .
-                   ' dsc_file = ' . "'" . $dados['dsc_file'] . "'," .
                    ' exibir = ' . $exibir .
                    ' WHERE id_assunto = ' . $condicao['id'];
-// pd($sql);'''A'''    '''
                 $this->db-> query($sql);
 
-            $this->session->set_flashdata('edicaook','Acordo atualizado com sucesso');
-            redirect(current_url());
+            $this->session->set_flashdata('excluirok','Acordo atualizado com sucesso!!!');
+            redirect('assunto/update/'.$condicao['id']);
         endif;
     }
 

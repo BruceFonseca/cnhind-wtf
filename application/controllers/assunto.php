@@ -24,21 +24,16 @@ class Assunto extends CI_Controller{
 
         // se existe uma validação, envia os dados para o model inserir
         if ($this->form_validation->run()==TRUE){
-
-            // pd($this->input->post('exibir'));
-
-            $validacao = TRUE;
+            
             $dados = elements(array(
                                     'dsc_assunto',
                                     'dsc_conceito',
-                                    'dsc_file',
                                     'exibir'
                                     ), $this->input->post());
             $this->assunto_model->do_insert($dados);
         }
 
         $dados = array(
-            'validacao'=> TRUE,
             'tela'=> 'create',
             'pasta'=> 'assunto',// é a pasta que está dentro de "telas". existe uma pasta para cada tabela a ser cadastrada
              );
@@ -125,51 +120,37 @@ class Assunto extends CI_Controller{
 
     public function  update(){   
 
-    $flash_data = NULL;
-
-    if($this->session->flashdata('edicaook')):
-        $flash_data = '<div class="alert alert-success">Acordo atualizado com sucesso!!!</div>';
-    endif;
-      
         // recebe o id do usuário através da URL
         $id = $this->uri->segment(3);
-            
 
-        if($this->input->post('dsc_assunto')){
+            $this->form_validation->set_rules('dsc_assunto', 'Título', 'required');
+
+            if ($this->form_validation->run()==TRUE):
+
+                // pd($this->input->post());
 
             //o $id é setado novamente quando vem por POST 
             $id = $this->input->post('id_assunto');
 
-            $this->form_validation->set_rules('dsc_assunto', 'Título', 'required');
-            // $this->form_validation->set_message('is_unique', 'Este %s já está cadastrado.');//é uma menssagem definida pelo programador onde %s é o nome do campo
-
-            if ($this->form_validation->run()==TRUE):
-
-
                 $dados = elements(array(
+                                        'id_assunto',
                                         'dsc_assunto',
                                         'dsc_conceito',
-                                        'dsc_file',
                                         'exibir'
                                         ), $this->input->post());
 
                 $this->assunto_model->do_update($dados, array('id'=> $id));
             endif;
 
-        }//fim do if
 
         $dados = array(
             'tela'=> 'update',
             'pasta'=> 'assunto',// é a pasta que está dentro de "telas". existe uma pasta para cada tabela a ser cadastrada
             'query'=> $this->assunto_model->get_byid($id)->row(),
-            'flash_data'=> $flash_data,
          );
         
         $this->load->view('conteudo', $dados );
 
-        // $id = $this->input->post('id');
-
-        // pd($id);
     }
 
 

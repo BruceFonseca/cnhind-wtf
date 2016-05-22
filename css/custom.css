@@ -448,11 +448,13 @@ padding: 15px;
   border-bottom: solid 1px #ccc;
 }
 
-
-/*pagination*/
-/*.content-pagination nav ul{
-  float: right;
-}*/
+.checkbox label, .radio label {
+    cursor: pointer;
+    font-weight: 700;
+    margin-bottom: 0;
+    min-height: 20px;
+    padding-left: 20px;
+}
 
 /*table*/
 .botoes_td a .btn{
@@ -464,4 +466,20 @@ padding: 15px;
 .table tbody tr,
 .table tbody tr td{
   vertical-align: middle;
+}
+
+/*inputs DataTables*/
+.content-table input,
+.content-table select
+{
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }

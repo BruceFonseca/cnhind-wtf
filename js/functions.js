@@ -250,5 +250,28 @@ $('#retrieve-usuario').DataTable({
 }
     } );
 
+//summernote WYSIWYG Editor
+
+$('#editoWYSIWYG').summernote({
+      height: 300,                 // set editor height
+      minHeight: null,             // set minimum height of editor
+      maxHeight: null,
+      toolbar: [
+              ['style', ['style']],
+              ['font', ['bold', 'italic', 'underline', 'clear']],
+              // ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+              ['fontname', ['fontname']],
+              ['fontsize', ['fontsize']],
+              //['color', ['color']],
+              ['para', ['ul', 'ol', 'paragraph']],
+              // ['height', ['height']],
+              // ['table', ['table']],
+              ['insert', ['link', 'picture', 'hr']],
+              // ['view', ['fullscreen'/*, 'codeview' */]],   // remove codeview button 
+              ['help', ['help']]
+            ],
+            lang: "pt-BR",
+    });
+
 
 });//fim page

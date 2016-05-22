@@ -6,36 +6,25 @@ class Tratado_model extends CI_Model{
         
         if ($dados != NULL):
             $this->db->insert('tratado',$dados);
-            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
+            $this->session->set_flashdata('excluirok','Cadastro efetuado com sucesso');
 
-            if ($tela != NULL) {
-            //se não é nulo então retorna msg informando que foi cadastrado com sucesso
-            //só utilizado quando esta cadastrando um novo assundo direto da tela de "Interpretaçoes"
-              $return = '<div class="alert alert-success" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span>
-                        Assunto cadastrado com sucesso!!!</div>';
-              return $return;
-            }else{
-              redirect('tratado/create');
-            }
+              redirect('assuntos');
         endif;
             
     }
     
-    public function do_update($dados=NULL, $condicao=NULL){
+    public function do_update($dados=NULL, $id=NULL){
 
-
-        if ($dados != NULL && $condicao != NULL):
+        if ($dados != NULL && $id != NULL):
 
         $sql =  'UPDATE tratado 
                     SET dsc_tratado = ' . "'" . $dados['dsc_tratado'] . "'" .
-                ' WHERE id_tratado = ' . $dados['id_tratado'];
+                ' WHERE id_tratado = ' . $id['id_tratado'];
 
-                $this->db-> query($sql);
-
-            $this->session->set_flashdata('edicaook','Acordo atualizado com sucesso');
-            redirect(current_url());
+            $this->db-> query($sql);
+            
+            $this->session->set_flashdata('excluirok','Assunto atualizado com sucesso');
+            redirect('tratado/update/'.$id['id_tratado']);
         endif;
     }
 

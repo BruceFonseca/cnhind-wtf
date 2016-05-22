@@ -1,58 +1,26 @@
-<div class='form'>
-	
+<?php
 
-	<?php
+$atributos = array('class' => 'form', 'id' => 'myform');
 
-		echo '<form method="post" action="" class="ajax_form">';
+echo "<div class='row content-form'>";
 
-		echo form_fieldset('Atualizar Assunto');
-			
-		if($flash_data):
-	        echo $flash_data;
-	    endif;
+echo form_open("tratado/update", $atributos);
+echo "<h2>Atualizar novo Assunto</h2><hr>";
 
-		echo  validation_errors('<div class="alert alert-danger" role="alert">
-	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-	  <span class="sr-only">Error:</span>','</div>');
+echo form_hidden('id_tratado', $query->id_tratado);
 
-		echo form_label('ID Assunto');
-		echo form_input(array('name'=>'id_tratado', 'class'=>'id-tratado'),  set_value('id', $query->id_tratado),'bloqued')."<br>";
+if(validation_errors()):
+    echo '<div class="alert alert-danger" role="alert">'.validation_errors().'</div>';
+endif;
+if($this->session->flashdata('excluirok')):
+    echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('excluirok').'</div>';
+endif;
 
-		echo form_label('Nome da Planta');
-		echo form_input(array('name'=>'dsc_tratado'),  set_value('dsc_tratado',$query->dsc_tratado))."<br>";
+echo form_label('Título / Descrição do Assunto');
+echo form_input(array('name'=>'dsc_tratado', 'class'=>'form-control', 'value'=>$query->dsc_tratado),  '')."<br>";
 
-		echo form_button(array('name'=>'cadastrar', 'class'=>'submit', 'id'=>'submit','content'=>'Salvar', 'type'=>'submit'));
+echo form_button(array('name'=>'Atualizar', 'class'=>'btn btn-success', 'content'=>'Atualizar', 'type'=>'submit'))."<br>";
 
-		echo form_fieldset_close();
-		echo form_close();
+echo form_close();
 
-	?>
-
-</div>
-
-<!-- o script jquery abaixo é carregado no formulário no momento que o formulário é criado -->
-<script>
-	$(".submit").click(function(){
-		// var numtab = $(this).closest("div").attr("numtab");
-		// var numtab = $(this).closest("div").attr("numtab");
-		var id_assunto = $(this).closest('fieldset').find('input.id-tratado').val();
-
-		$('.ajax_form').submit(function(){
-				
-			var dados = $( this ).serialize();
-
-			$.ajax({
-				type: "POST",
-				url: "tratado/update/"+ id_assunto,
-				data: dados,
-				success: function( data )
-				{
-					$('div[numtab="'+ numTran +'"] div').remove();
-					$('div[numtab="'+ numTran +'"]').append(data);
-				}
-			});
-
-			return false;
-		});
-	});
-</script>
+echo "</div>";

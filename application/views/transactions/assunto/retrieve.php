@@ -30,8 +30,7 @@ echo '<div class="row">';
 
 echo '<div class="row title-form"><h2>Administrar Acordos</h2></div>'; 
 
-    echo '<div class="row content-form">';
-    
+echo '<div class="row content-form">';
 
 if($this->session->flashdata('excluirok')):
     echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('excluirok').'</div>';

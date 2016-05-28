@@ -52,15 +52,18 @@ class User_menu_model extends CI_Model{
     }
 
     public function set_session_menu_header($role){
+
         $submenu_list = array();
         $submenu_list = $this->get_submenu_by_role($role)->result();
         $this->session->set_userdata('session_menu_header', $submenu_list);
     }
 
     public function set_session_menu_sidebar(){
+
         $plantas = array(); 
         $plantas = $this->get_menu_planta()->result();
         $this->session->set_userdata('session_menu_sidebar', $plantas);
+
     }
     
 }

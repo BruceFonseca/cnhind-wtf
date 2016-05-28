@@ -6,8 +6,6 @@ class Login extends CI_Controller {
     {
         parent::__construct();
 
-        $this->load->helper(array('form'));
-
     }
 
     function index()

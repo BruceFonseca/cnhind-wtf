@@ -6,8 +6,8 @@ class Usuario_model extends CI_Model{
         
         if ($dados != NULL):
             $this->db->insert('users',$dados);
-            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso. <br>Um e-mail contendo informações de acesso foi enviado para o usuário.');
-            redirect('usuario/create');
+            $this->session->set_flashdata('excluirok','Cadastro efetuado com sucesso. <br>Um e-mail contendo informações de acesso foi enviado para o usuário.');
+            redirect('usuarios');
         endif;
             
     }
@@ -15,8 +15,8 @@ class Usuario_model extends CI_Model{
     public function do_update($dados=NULL, $condicao=NULL){
         if ($dados != NULL && $condicao != NULL):
             $this->db->update('users',$dados, $condicao);
-            $this->session->set_flashdata('edicaook','Usuário atualizado com sucesso');
-            redirect(current_url());
+            $this->session->set_flashdata('excluirok','Usuário atualizado com sucesso!!!');
+        redirect('usuarios');
         endif;
     }
 
@@ -66,6 +66,9 @@ class Usuario_model extends CI_Model{
                  ' WHERE id = ' . $id;
 
         $this->db->query($query);
+
+        $this->session->set_flashdata('excluirok','Senha reinicializada com sucesso!!!');
+        redirect('usuarios');
     }
 
     public function reset_senha_by_username($id, $senha){
@@ -88,6 +91,9 @@ class Usuario_model extends CI_Model{
                  ' WHERE username = '. "'" . $username ."'";
 
         $this->db->query($query);
+
+        $this->session->set_flashdata('excluirok','Senha atualizada com sucesso!!!');
+        redirect('trocar-senha');
     }
 
     public function send_email($email, $senha, $tpass = NULL, $username = NULL, $name = NULL){
@@ -106,15 +112,15 @@ class Usuario_model extends CI_Model{
             $this->email->initialize($config);
             
             if ($tpass == 'new_user') {
-                $this->email->from('contato@bflabs.com.br', 'Novo Usuário | COE - Flexibilidade');
+                $this->email->from('contato@bflabs.com.br', 'Novo Usuário | Working Time Flexibility');
                 $this->email->message("Parabéns $name, 
-                                        <br><br>seu usuário COE - Flexibilidade foi criado com sucesso!!!. 
-                                        <br> Seu ID de acesso é: $username <br> Sua nova senha é: $senha <br> <br>
+                                        <br><br>seu usuário Working Time Flexibility foi criado com sucesso!!!. 
+                                        <br> Seu ID de acesso é: $username <br> Sua nova senha é: $senha<br><br>
                                         Favor alterá-la por questões de segurança<br><br>
-                                        <a href='http://bflabs.com.br/cnhind/'' title=>Clique aqui para acessar COE - Flexibilidade</a>");
+                                        <a href='http://bflabs.com.br/cnhind/'' title=>Clique aqui para acessar Working Time Flexibility</a>");
             }else{
-                $this->email->from('contato@bflabs.com.br', 'Lembrar Senha | COE - Flexibilidade');
-                $this->email->message("Sua nova senha é: $senha <br> Favor alterá-la por questões de segurança");
+                $this->email->from('contato@bflabs.com.br', 'Lembrar Senha | Working Time Flexibility');
+                $this->email->message("Sua nova senha é: $senha<br> Favor alterá-la por questões de segurança");
             }
             $this->email->to($email); 
             $this->email->subject('Nova mensagem enviada do site');

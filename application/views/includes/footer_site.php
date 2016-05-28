@@ -1,4 +1,6 @@
-
+		<div id="upload"></div>  <!-- exibira a div para fazer upload de arquivos -->
+		<div id="background"></div>  <!-- exibira a div para criar um tratado apartir do cadastro de ocorrencia -->
+		<div id="tratado"></div>  <!-- exibira a div para criar um tratado apartir do cadastro de ocorrencia -->
 		</main>
     </body>
 

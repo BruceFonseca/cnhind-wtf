@@ -42,6 +42,16 @@ if($this->session->flashdata('excluirNOK')):
     echo '<div class="alert alert-danger" role="alert">'.$this->session->flashdata('excluirNOK').'</div>';
 endif;
 
+//exibe as menssagens de sessions definitivas. estão separadas porque após exibi-las, elas são destruidas
+if($this->session->userdata('ocorrencia-OK')):
+    echo '<div class="alert alert-success" role="alert">'.$this->session->userdata('ocorrencia-OK').'</div>';
+    $this->session->unset_userdata('ocorrencia-OK');
+endif;
+if($this->session->userdata('ocorrencia-NOK')):
+    echo '<div class="alert alert-danger" role="alert">'.$this->session->userdata('ocorrencia-NOK').'</div>';
+    $this->session->unset_userdata('ocorrencia-NOK');
+endif;
+
         echo'<a href="'.base_url('ocorrencia/create').'"><label>Nova interpretação</label>
             <button type="button" class="btn btn-default" data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Adicionar nova interpretação">
                 <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>

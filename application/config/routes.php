@@ -42,6 +42,7 @@ $route['default_controller'] = "login";
 $route['acordos'] = "assunto/retrieve";
 $route['assuntos'] = "tratado/retrieve";
 $route['usuarios'] = "usuario/retrieve";
+$route['trocar-senha'] = "usuario/trocar_senha";
 $route['plantas'] = "planta/retrieve";
 $route['periodos'] = "periodo/retrieve";
 $route['interpretacoes'] = "ocorrencia/retrieve";

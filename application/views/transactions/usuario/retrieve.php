@@ -1,9 +1,5 @@
 <?php
 
-if($this->session->flashdata('excluirok')):
-    echo '<p>'.$this->session->flashdata('excluirok').'</p>';
-endif;
-
 $this->table->set_heading('User id', 'Nome','Matrícula','Acesso','Status', 'Ação');
 
 
@@ -17,6 +13,10 @@ $acoes = array('data' => '
     <a href="'.base_url('usuario/delete/'.$linha->id).'" class="delete-event">
     <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Excluir">
        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+    </button></a>
+    <a href="'.base_url('usuario/reset_senha/'.$linha->id).'">
+    <button type="button" class="btn btn-default"  data-toggle="tooltip" aria-haspopup="true" aria-expanded="true" data-placement="bottom" data-original-title="Reinicializar senha">
+       <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
     </button></a>
                                 ', 
     'class' => 'botoes_td');

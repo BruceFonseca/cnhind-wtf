@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-var url_base = "http://localhost/cnhind-wtf/";
+var url_base = window.location.origin + '/cnhind-wtf/';
 
 //sidebar
   $('#wrapper').addClass('toggled');
@@ -45,14 +45,24 @@ var url_base = "http://localhost/cnhind-wtf/";
 
 
 //sortable
-  $( "#plantas1, #plantas2" ).sortable({
-          connectWith: ".connectedPlantas",
+$(function() {
+      $( ".sortable1, .sortable2" ).sortable(
+      {
+          connectWith: ".connectedSortable",
           start: function(event, ui) {
+            // alert('start');
         },
-      stop: function (event, ui) {
-        popular_periodos();
-      }
-  }).disableSelection();
+      update: function (event, ui) {
+          // alert('update');
+          }
+      }).disableSelection();
+    });
+
+  //resolve o problema do sortable, que não permite selecionar textarea dentro de sortable
+  $('textarea').mousedown(function(e){ e.stopPropagation(); });
+
+
+
 
   function popular_periodos(){
 
@@ -251,7 +261,6 @@ $('#retrieve-usuario').DataTable({
     } );
 
 //summernote WYSIWYG Editor
-
 $('#editoWYSIWYG').summernote({
       height: 300,                 // set editor height
       minHeight: null,             // set minimum height of editor
@@ -272,6 +281,132 @@ $('#editoWYSIWYG').summernote({
             ],
             lang: "pt-BR",
     });
+
+
+//criar ocorrencia
+$("#submit").click(function(event){
+    // event.preventDefault();
+      var id_planta  = $(this).closest('.form').find('select[name="id_planta"]').val();
+      var id_periodo = $(this).closest('.form').find('select[name="id_periodo"]').val();
+      var id_assunto = $(this).closest('.form').find('select[name="id_assunto"]').val();
+      var dsc_file   = $(this).closest('.form').find("input[name='dsc_file']").val();
+    
+    var dadosAssuntos = {};
+
+    $(".sortable2 li").each(function(){
+            var self = $(this);
+              dadosAssuntos[self.attr('id')] = {            
+                id : self.find('.id').text(),
+                name  : self.find('.name').text(),
+                interpretacao  : self.find('textarea.dsc_interpretacao').val()
+            };            
+        });
+
+    dadosAssuntos['dados_acordo'] = {            
+            id_assunto  : id_assunto,
+            id_planta   : id_planta,
+            id_periodo  : id_periodo,
+            dsc_file    : dsc_file
+        };
+
+    var dados = JSON.stringify(dadosAssuntos);
+
+    $('#myform').submit(function(){
+
+      $.ajax({
+        type: "POST",
+        url: url_base+"ocorrencia/create",
+        data: 'data=' + dados,
+        success: function( data )
+        {
+          window.location.href =  url_base+"interpretacoes";
+        }
+      });
+
+      return false;
+    });
+  });
+
+//ATUALIZAR ocorrencia
+$("#submit-update").click(function(event){
+      var id_planta  = $(this).closest('.form').find('select[name="id_planta"]').val();
+      var id_periodo = $(this).closest('.form').find('select[name="id_periodo"]').val();
+      var id_assunto = $(this).closest('.form').find('select[name="id_assunto"]').val();
+      var dsc_file   = $(this).closest('.form').find("input[name='dsc_file']").val();
+    
+    var id = $('input[name="id_ocorrencia"]').val();
+    var dadosAssuntos = {};
+
+    $(".sortable2 li").each(function(){
+            var self = $(this);
+              dadosAssuntos[self.attr('id')] = {            
+                id : self.find('.id').text(),
+                name  : self.find('.name').text(),
+                interpretacao  : self.find('textarea.dsc_interpretacao').val()
+            };            
+        });
+
+    dadosAssuntos['dados_acordo'] = {            
+            id_assunto  : id_assunto,
+            id_planta   : id_planta,
+            id_periodo  : id_periodo,
+            dsc_file    : dsc_file
+        };
+
+    var dados = JSON.stringify(dadosAssuntos);
+
+    $('#myform').submit(function(){
+
+      $.ajax({
+        type: "POST",
+        url: url_base+"ocorrencia/update/"+id,
+        data: 'data=' + dados,
+        success: function( data )
+        {
+          window.location.href =  url_base+"interpretacoes";
+        }
+      });
+
+      return false;
+    });
+  });
+
+  $('#anexar-arquivo').on('click', function(){
+       $.ajax({
+              type      : 'post',
+              url       : url_base+"ocorrencia/carregar",
+              success: function( response ){
+                  $('#background').show();
+                  $('#upload').show();
+                  $('#upload').css( "display", "table" );
+                  $('#upload').css( "position", "absolute" );
+                  $('#upload').append(response);
+              }
+      });
+  });
+
+
+  //tratado // garante que estarão fechados quando sistema carregar
+  $('#tratado').hide();
+  $('#tratado').css({position: '', display: 'none'});
+
+//tratado
+$('#adicionar-assunto').on('click', function(){
+    var controller = url_base+'tratado/create_fast';
+       $.ajax({
+              type      : 'post',
+              url       : controller, //é o controller que receberá
+              success: function( response ){
+                // alert(response);
+                  $('#background').show();
+                  $('#tratado').show();
+                  $('#tratado').css( "display", "table" );
+                  $('#tratado').css( "position", "absolute" );
+                  $('#tratado').append(response);
+              }
+      });
+  });
+
 
 
 });//fim page

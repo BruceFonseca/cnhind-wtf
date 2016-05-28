@@ -6,8 +6,6 @@ class Ocorrencia_model extends CI_Model{
         
         if ($dados != NULL):
             $this->db->insert('ocorrencia',$dados);
-            $this->session->set_flashdata('cadastrook','<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                                                 <span class="sr-only">Error:</span>     Acordo atualizado com sucesso!!!');
         endif;
             
     }
@@ -22,7 +20,6 @@ class Ocorrencia_model extends CI_Model{
                         'id_periodo = ' .  $dados['id_periodo'] . ", " .
                         'dsc_file = "' . $dados['dsc_file'] .' "'  .
                     ' WHERE id_ocorrencia = ' . $condicao;
-                    // pd($sql);
             $this->db-> query($sql);
         endif;
     }
@@ -370,8 +367,8 @@ class Ocorrencia_model extends CI_Model{
         //apaga dados de ocorrencia
         $this->db->delete('ocorrencia', array('id_ocorrencia' => $id)); 
 
-        $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
-        redirect('interpretacoes');
+        // $this->session->set_flashdata('excluirok','Registro excluído com sucesso!!!');
+        // redirect('interpretacoes');
     }
    
     

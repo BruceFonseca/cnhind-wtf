@@ -1,5 +1,9 @@
+<div class='row content-form'>
 <?php
 echo '<div class="buttons-controle">';
+
+
+if(isset($interpretacao[0]->id_assunto)){
 echo 
         '
         <a class="btn-print"  data-toggle="tooltip" data-placement="top" data-original-title="Imprimir"  target="_blank" href= "'. base_url('pdfgerar/pdf_plantas_acordo/'. $interpretacao[0]->id_assunto ). '">
@@ -8,6 +12,7 @@ echo
             </button>
         </a>
         ';
+
     
     echo 
         '
@@ -17,14 +22,17 @@ echo
             </button>
         </a>
         ';  
-echo '</div>';
+}
+echo '</div></div>';
 
-echo '<div class="retrieve-table">';
-echo '<h2> Interpretações Disponíveis</h2>';   
+echo '<div class="row">';
+echo '<div class="row content-form">';
+echo '<div class="row title-form"><h2>Interpretações Disponíveis</h2></div><hr>'; 
+echo '<div class="row content-table">';
 
    echo '
   <!-- Table -->
-  <table border="1" cellpadding="2" cellspacing="1" class="table table-striped table-hover">
+  <table id="retrieve-usuario" cellpadding="2" cellspacing="1" class="table table-striped table-hover">
   <thead>
       <tr>
       <th>Acordo</th>
@@ -60,6 +68,9 @@ endforeach;
   echo '</tbody></table>
 ';
 
+echo '</div>';
+echo '</div>';
+echo '</div>';
 echo '</div>';
 ?>
 

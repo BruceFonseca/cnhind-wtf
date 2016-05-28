@@ -6,8 +6,8 @@ class Planta_model extends CI_Model{
         
         if ($dados != NULL):
             $this->db->insert('planta',$dados);
-            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
-            redirect('planta/create');
+            $this->session->set_flashdata('excluirok','Cadastro efetuado com sucesso!!!');
+            redirect('plantas');
         endif;
             
     }
@@ -16,8 +16,6 @@ class Planta_model extends CI_Model{
 
 
         if ($dados != NULL && $condicao != NULL):
-            // não está utilizando a variavel condição
-        // pd($dados['id_assunto']);
 
         $sql =  'UPDATE planta 
                     SET dsc_planta = ' . "'" . $dados['dsc_planta'] . "'" .
@@ -25,8 +23,8 @@ class Planta_model extends CI_Model{
 
                 $this->db-> query($sql);
 
-            $this->session->set_flashdata('edicaook','Acordo atualizado com sucesso');
-            redirect(current_url());
+            $this->session->set_flashdata('excluirok','Cadastro efetuado com sucesso!!!');
+            redirect('plantas');
         endif;
     }
 

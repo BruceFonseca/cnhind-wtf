@@ -1,21 +1,9 @@
 <?php 
-
-if($this->session->userdata('logged_in'))
-{
+//variaveis da session
+if($this->session->userdata('logged_in')){
     $session_data = $this->session->userdata('logged_in');
-
     $dsc_name = $session_data['dsc_name'];
     $username= $session_data['username'];
-
-}else{
-    redirect('home/logout');
-}
-
-if($this->session->userdata('session_menu_header'))
-{
-    $submenu_list = $this->session->userdata('session_menu_header');
-
-    // pd($submenu_list );
 }
 
 ?>

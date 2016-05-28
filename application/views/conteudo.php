@@ -5,7 +5,6 @@
 
 
 $this->load->view('includes/head_site');
-$this->load->view('includes/header_site');
 // $this->load->view('transactions/conteudo/conteudo'); //é a div que vai guardar o conteudo de todas as abas.
 ?>
 
@@ -17,6 +16,7 @@ $this->load->view('includes/header_site');
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+            <?php $this->load->view('includes/header_site'); ?>
             <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                 <span class="hamb-top"></span>
     			<span class="hamb-middle"></span>

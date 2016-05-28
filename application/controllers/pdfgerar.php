@@ -5,12 +5,8 @@ class Pdfgerar extends CI_Controller{
     public function __construct() {
         parent::__construct();
         
-       $this->load->helper('url');
-       $this->load->helper('form');
-       $this->load->helper('array');//ajuda a passar dados para o model
        $this->load->library('form_validation');
-       $this->load->library('session');
-       $this->load->database();//carrega o banco de dados para fazer operações no banco
+       // $this->load->database();//carrega o banco de dados para fazer operações no banco
        $this->load->library('table');//carrega tabela 
        $this->load->model('ocorrencia_model');//carrega o model
        $this->load->model('assunto_model');//carrega o model

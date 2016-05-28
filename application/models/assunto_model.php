@@ -14,7 +14,6 @@ class Assunto_model extends CI_Model{
     
     public function do_update($dados=NULL, $condicao=NULL){
 
-
         if ($dados != NULL && $condicao != NULL):
             // não está utilizando a variavel condição
             $exibir = ($dados['exibir']) ? $dados['exibir'] : 0 ;

@@ -14,7 +14,7 @@
 <body>
 <div class="topo-login">
 <img id="logo-login" src="<?php echo base_url('img/sistema/logotipo/logo.png')?>" alt=""/>
-    <span>COE - Flexibilidade</span>
+    <span>Working Time Flexibility</span>
 </div>
 
 

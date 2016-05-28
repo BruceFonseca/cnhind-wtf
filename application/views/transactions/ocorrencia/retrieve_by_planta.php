@@ -1,6 +1,6 @@
 <?php
 
-echo '<div class="buttons-controle">';
+echo '<div class="row content-form"><div class="buttons-controle">';
 echo 
         '
         <a class="btn-print" data-toggle="tooltip" data-placement="top" data-original-title="Imprimir" target="_blank" href= "'. base_url('pdfgerar/pdf_acordos_planta/'. $interpretacao[0]->id_planta ).'">
@@ -18,14 +18,19 @@ echo
             </button>
         </a>
         ';  
-echo '</div>';
+echo '</div></div>';
 
-echo '<div class="retrieve-table">';
+echo '<div class="row">';
+echo '<div class="row content-form">';
+echo '<div class="row title-form">';
 echo '<h2> Interpretações - '. $interpretacao[0]->dsc_planta .'</h2>';   
+echo '</div><hr>'; 
+echo '<div class="row content-table">';
+echo '<div class="retrieve-table">';
 
    echo '
   <!-- Table -->
-  <table border="1" cellpadding="2" cellspacing="1" class="table table-striped table-hover">
+  <table id="retrieve-usuario"  cellpadding="2" cellspacing="1" class="table table-striped table-hover">
   <thead>
       <tr>
       <th>Acordo</th>

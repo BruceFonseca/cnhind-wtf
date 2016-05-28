@@ -6,18 +6,16 @@ class Periodo_model extends CI_Model{
         
         if ($dados != NULL):
             $this->db->insert('periodo',$dados);
-            $this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
-            redirect('periodo/create');
+            $this->session->set_flashdata('excluirok','Cadastro efetuado com sucesso');
+            redirect('periodos');
         endif;
             
     }
     
     public function do_update($dados=NULL, $condicao=NULL){
 
-
         if ($dados != NULL && $condicao != NULL):
             // não está utilizando a variavel condição
-        // pd($dados['id_assunto']);
 
         $sql =  'UPDATE periodo 
                     SET dsc_periodo = ' . "'" . $dados['dsc_periodo'] . "'" .
@@ -25,15 +23,15 @@ class Periodo_model extends CI_Model{
 
                 $this->db-> query($sql);
 
-            $this->session->set_flashdata('edicaook','Período atualizado com sucesso!!!');
-            redirect(current_url());
+            $this->session->set_flashdata('excluirok','Período atualizado com sucesso!!!');
+            redirect('periodos');
         endif;
     }
 
     public function do_delete($id){
 
         //apaga dados de oc_cs_ocorrencias
-        $dbRet = $this->db->delete('periodo', array('id_assunto' => $id));
+        $dbRet = $this->db->delete('periodo', array('id_periodo' => $id));
 
         if( !$dbRet ){
             $this->session->set_flashdata('excluirNOK','Não foi possível excluir o registro. 

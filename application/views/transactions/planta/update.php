@@ -1,58 +1,27 @@
-<div class='form'>
-	
+<?php
 
-	<?php
+$atributos = array('class' => 'form', 'id' => 'myform');
 
-		echo '<form method="post" action="" class="ajax_form">';
+echo "<div class='row content-form'>";
 
-		echo form_fieldset('Atualizar Planta');
-			
-		if($flash_data):
-	        echo $flash_data;
-	    endif;
+echo form_open("planta/update", $atributos);
+echo "<h2>AAtualizar Planta</h2><hr>";
 
-		echo  validation_errors('<div class="alert alert-danger" role="alert">
-	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-	  <span class="sr-only">Error:</span>','</div>');
+if(validation_errors()):
+    echo '<div class="alert alert-danger" role="alert">'.validation_errors().'</div>';
+endif;
+if($this->session->flashdata('excluirok')):
+    echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('excluirok').'</div>';
+endif;
 
-		echo form_label('ID Planta');
-		echo form_input(array('name'=>'id_planta', 'class'=>'id-planta'),  set_value('id', $query->id_planta),'bloqued')."<br>";
+if($this->session->flashdata('excluirNOK')):
+    echo '<div class="alert alert-danger" role="alert">'.$this->session->flashdata('excluirNOK').'</div>';
+endif;
 
-		echo form_label('Nome da Planta');
-		echo form_input(array('name'=>'dsc_planta'),  set_value('dsc_planta',$query->dsc_planta))."<br>";
+echo form_hidden('id_planta', $query->id_planta);
+echo form_label('Nome da Planta');
+echo form_input(array('name'=>'dsc_planta', 'class'=>'form-control'),  set_value('dsc_planta',$query->dsc_planta))."<br>";
 
-		echo form_button(array('name'=>'cadastrar', 'class'=>'submit', 'id'=>'submit','content'=>'Salvar', 'type'=>'submit'));
+echo form_button(array('name'=>'cadastrar', 'class'=>'btn btn-success', 'content'=>'Atualizar', 'type'=>'submit'))."<br>";
 
-		echo form_fieldset_close();
-		echo form_close();
-
-	?>
-
-</div>
-
-<!-- o script jquery abaixo é carregado no formulário no momento que o formulário é criado -->
-<script>
-	$(".submit").click(function(){
-		// var numtab = $(this).closest("div").attr("numtab");
-		// var numtab = $(this).closest("div").attr("numtab");
-		var id_assunto = $(this).closest('fieldset').find('input.id-planta').val();
-
-		$('.ajax_form').submit(function(){
-				
-			var dados = $( this ).serialize();
-
-			$.ajax({
-				type: "POST",
-				url: "planta/update/"+ id_assunto,
-				data: dados,
-				success: function( data )
-				{
-					$('div[numtab="'+ numTran +'"] div').remove();
-					$('div[numtab="'+ numTran +'"]').append(data);
-				}
-			});
-
-			return false;
-		});
-	});
-</script>
+echo form_close();

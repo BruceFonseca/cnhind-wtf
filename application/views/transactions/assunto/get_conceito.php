@@ -1,6 +1,5 @@
 
-<div class='form'>
-    <div class="buttons-controle">
+<div class='row content-form'>
 
     <?php 
     if ($status->dsc_file) {
@@ -47,19 +46,14 @@
  ?>
 	
 </div>
+
+
 <?php
 
-if($this->session->flashdata('excluirok')):
-    echo '<p>'.$this->session->flashdata('excluirok').'</p>';
-endif;
+echo '<div class="row">';
+echo '<div class="row content-form">';
 
-echo '<form class="ajax_form imprimir">';
-
-echo form_fieldset( $status->dsc_assunto);
-
-echo  validation_errors('<div class="alert alert-danger" role="alert">
-  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  <span class="sr-only">Error:</span>','</div>');
+echo '<div class="row title-form"><h2>'.$status->dsc_assunto.'</h2></div>'; 
 
     echo 
     '
@@ -74,67 +68,10 @@ echo  validation_errors('<div class="alert alert-danger" role="alert">
         </div>
     ';
 
-echo form_fieldset_close();
-echo form_close();
+echo '</div>';
+echo '</div>';
 
 ?>
 
 </div>
 
-<!-- o script jquery abaixo é carregado no formulário no momento que o formulário é criado -->
-<script>                    
-$(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
-
-     $('.retrieve_by_acordo').on('click',function(){
-        var conceito = $('.ajax_form.imprimir fieldset legend').text();
-        var desc = 'Plantas com ' + conceito;
-        var controller = $(this).attr('ctr');
-        var numTran = numTab();
-
-        criarNovaAbaSemConteudo(controller, desc, numTran);
-
-         $.ajax({
-                type      : 'post',
-                url       : controller, //é o controller que receberá
-                // data      : 'id='+ id_ocorrencia,
-                
-                success: function( response ){
-                        $('div[numtab="'+ numTran +'"]').append(response);
-                }
-            });
-
-    });
-    
-    $('.btn-print').on('click', function(){
-
-        var controller = $('.btn-print').attr('ctr');
-
-         printPdf(controller);
-    });
-
-     $('.btn-download').on('click', function(){
-
-        var controller = $('.btn-print').attr('ctr');
-        printPdf(controller);
-
-         
-    });
-
-    function printPdf(url) {
-        
-        $.ajax({
-            url: url,
-            success: function(data) {
-                var blob=new Blob([data]);
-                var link=data;
-                link.click();
-            }
-        });
-    }
-
-
-
-</script>

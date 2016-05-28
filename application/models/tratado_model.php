@@ -2,6 +2,15 @@
 
 class Tratado_model extends CI_Model{
     
+    public function do_insert_fast($dados=NULL, $tela = NULL){            
+        
+        if ($dados != NULL):
+            $this->db->insert('tratado',$dados);
+          return 'Cadastro efetuado com sucesso';
+        endif;
+            
+    }
+
     public function do_insert($dados=NULL, $tela = NULL){            
         
         if ($dados != NULL):

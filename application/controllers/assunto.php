@@ -5,15 +5,25 @@ class Assunto extends CI_Controller{
     public function __construct() {
         parent::__construct();
         
-       $this->load->helper('url');
-       $this->load->helper('form');
-       $this->load->helper('array');//ajuda a passar dados para o model
        $this->load->library('form_validation');
-       $this->load->library('session');
-       $this->load->database();//carrega o banco de dados para fazer operações no banco
        $this->load->library('table');//carrega tabela 
        $this->load->model('assunto_model');//carrega o model
         date_default_timezone_set('America/Sao_Paulo');//define o timezone
+
+        //menu sidebar
+        $this->load->model('user_menu_model');//carrega o model
+        $menu_sidebar = array('menu_planta'=> $this->user_menu_model->get_menu_planta()->result());
+        $this->load->vars($menu_sidebar);
+
+        //menu header
+        if($this->session->userdata('logged_in')){
+            $session_data = $this->session->userdata('logged_in');
+            $role = $session_data['role'];
+            $menu_header = array('submenu_list'=> $this->user_menu_model->get_submenu_by_role($role)->result());
+            $this->load->vars($menu_header);
+        }else{
+            redirect('login', 'refresh');
+        }
     }
     
    

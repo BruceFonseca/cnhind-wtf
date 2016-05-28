@@ -10,15 +10,9 @@ class Oc_ac_as_model extends CI_Model{
         }
 
         foreach ($dados as $linha):
-            // pd($dados);
-            // $file = $linha->file ;
             $file = isset($linha->file)     ? $linha->file    : 'Não disponível';
-
             $sql = ' INSERT INTO oc_ac_as (id_ocorrencia, id_tratado, dsc_file, dsc_interpretacao)
                     VALUES('. $id_ocorrencia .', '. $linha->id . ', "'. $file .'", "'. $linha->interpretacao .'")';
-
-                    // pd($sql);
-                    
             $this->db-> query($sql);
         endforeach;
 
@@ -26,7 +20,6 @@ class Oc_ac_as_model extends CI_Model{
 
     public function do_delete($id=NULL){
         $sql = 'DELETE FROM oc_ac_as WHERE id_ocorrencia= '. $id;
-
         $this->db-> query($sql);
     }
 

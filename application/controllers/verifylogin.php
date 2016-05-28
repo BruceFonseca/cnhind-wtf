@@ -74,7 +74,6 @@ class Verifylogin extends CI_Controller {
 
         if($email != NULL){
             $senha = time();
-            // pd($senha);
             $this->usuario_model->send_email($email, $senha);
             $this->usuario_model->reset_senha_by_username($id, $senha);
             echo ' Nova senha enviada para o e-mail <strong>'. $email . '</strong>';

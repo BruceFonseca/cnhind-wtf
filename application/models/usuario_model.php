@@ -58,6 +58,20 @@ class Usuario_model extends CI_Model{
         return $this->db->query($query);
     }
 
+    public function get_email($id) {
+        $query = 'SELECT email FROM users
+                  WHERE id = "' . $id . '"' ; 
+
+        return $this->db->query($query);
+    }
+
+    public function get_username($id) {
+        $query = 'SELECT username FROM users
+                  WHERE id = "' . $id . '"' ; 
+
+        return $this->db->query($query);
+    }
+
     public function reset_senha($id){
         $pass = md5(123); // senha 123
 
@@ -77,6 +91,15 @@ class Usuario_model extends CI_Model{
         $query = "UPDATE users
                   SET password = " . "'" . $pass ."'" .
                  ' WHERE username = "' . $id . '"' ; 
+
+        $this->db->query($query);
+    }
+    public function reset_senha_by_id($id, $senha){
+        $pass = md5($senha);
+
+        $query = "UPDATE users
+                  SET password = " . "'" . $pass ."'" .
+                 ' WHERE id = "' . $id . '"' ; 
 
         $this->db->query($query);
     }
@@ -117,7 +140,14 @@ class Usuario_model extends CI_Model{
                                         <br><br>seu usuário Working Time Flexibility foi criado com sucesso!!!. 
                                         <br> Seu ID de acesso é: $username <br> Sua nova senha é: $senha<br><br>
                                         Favor alterá-la por questões de segurança<br><br>
-                                        <a href='http://bflabs.com.br/cnhind/'' title=>Clique aqui para acessar Working Time Flexibility</a>");
+                                        <a href='http://bflabs.com.br/cnhind-wtf/'' title=>Clique aqui para acessar Working Time Flexibility</a>");
+            }elseif ($tpass == 'reset_senha') {
+                $this->email->from('contato@bflabs.com.br', 'Nova senha | Working Time Flexibility');
+                $this->email->message("Parabéns $name, 
+                                        <br><br>Sua senha de acesso ao Working Time Flexibility foi reiniciada com sucesso!!!. 
+                                        <br> Seu ID de acesso é: $username <br> Sua nova senha é: $senha<br><br>
+                                        Favor alterá-la por questões de segurança<br><br>
+                                        <a href='http://bflabs.com.br/cnhind-wtf/'' title=>Clique aqui para acessar Working Time Flexibility</a>");
             }else{
                 $this->email->from('contato@bflabs.com.br', 'Lembrar Senha | Working Time Flexibility');
                 $this->email->message("Sua nova senha é: $senha<br> Favor alterá-la por questões de segurança");

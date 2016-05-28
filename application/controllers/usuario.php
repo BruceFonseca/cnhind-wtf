@@ -161,7 +161,21 @@ class Usuario extends CI_Controller{
 
     public function  reset_senha(){   
         $id = (int) $this->uri->segment(3);
-        $this->usuario_model->reset_senha($id);
+        $email = $this->usuario_model->get_email($id)->row()->email;
+        $username = $this->usuario_model->get_username($id)->row()->username;
+
+        if($email != NULL){
+            $senha = time();
+            $this->usuario_model->send_email($email, $senha, 'reset_senha', $username);
+            $this->usuario_model->reset_senha_by_id($id, $senha);
+            $this->session->set_flashdata('excluirok',' Nova senha enviada para o e-mail <strong>'. $email . '</strong>');
+            redirect('usuarios');
+            return FALSE;
+        }else{
+            $this->session->set_flashdata('excluirNOK', 'Não foi possível recuperar sua senha. Contate o administrador do sistema.');
+            redirect('usuarios');
+            return FALSE;
+        }
     }
        
 }//fim da classe    

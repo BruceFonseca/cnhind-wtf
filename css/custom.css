@@ -623,3 +623,9 @@ padding: 15px;
 .badge:hover{
 cursor:pointer; 
 }
+
+/*data table*/
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #b32e38;
+}

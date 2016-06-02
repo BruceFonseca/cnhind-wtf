@@ -48,9 +48,15 @@ foreach ($interpretacao as $linha):
             echo  '<td colspan="" rowspan="'. $linha->cont .'" headers="">'. $linha->dsc_assunto  .'</td>';
         }
         if( strlen($linha->dsc_file)>0){
-            $file = '<a target="_blank" href="'.base_url().'uploads/'. $linha->dsc_file .'" >Arquivo na Íntegra</a>';
+            $arquivos = split(';', $linha->dsc_file);
+            $file = '';
+            foreach ($arquivos as $key => $value) {
+              $retVal = ($key == 0) ? '' : ' ('.$key.')' ;
+              $file = $file.'<a target="_blank" href="'.base_url().'uploads/'. $value .'" >Arquivo na Íntegra'.$retVal.'</a><br>';
+            }
+            
         }else{
-            $file ="-";
+            $file ="<center>-</center>";
         }
   echo '      
         <td>'. $linha->dsc_periodo .'</td>

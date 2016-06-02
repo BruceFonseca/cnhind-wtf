@@ -2,20 +2,6 @@
 <div class='row content-form'>
 
     <?php 
-    if ($status->dsc_file) {
-        echo 
-        '
-        <a target="_blank"  data-toggle="tooltip" data-placement="top" data-original-title="Ver anexo"  href= "'. base_url().'uploads/'. $status->dsc_file . '">
-        
-            <button type="button" class="btn btn-default" id="">
-                <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-            </button>   
-            
-        </a>
-
-        ';
-    }
-
     
     echo 
         '
@@ -51,9 +37,9 @@
 <?php
 
 echo '<div class="row">';
-echo '<div class="row content-form">';
+echo '<div class="row content-form get_conceito">';
 
-echo '<div class="row title-form"><h2>'.$status->dsc_assunto.'</h2></div>'; 
+echo '<div class="row title-form"><h2>'.$status->dsc_assunto.'</h2><hr></div>'; 
 
     echo 
     '

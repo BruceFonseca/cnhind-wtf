@@ -1,6 +1,11 @@
 /*    --------------------------------------------------
 	:: Login Section
 	-------------------------------------------------- */
+
+body{
+    background: #d2d2d2;
+}
+
 #login {
     padding-top: 50px
 }
@@ -174,31 +179,138 @@
 }
 
 .marcas{
-    height: 60px;
     max-width: 1000px;
     margin: 0 auto;
-    margin-top: 20px;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #707070;
+    border-top: 1px solid #707070;
     display: block;
 }
 
+.marcas ul{
+    display: table;
+}
+
 .marcas ul li{
-    height: 40px;
-    width: 60px;
+    height: 30px;
+    width: 40px;
     overflow: hidden;
-    margin: 10px;
+    margin: 0px;
     display: inline;
     float: left;
 }
 
-.container{
+.container-fluid{
     margin-top: 20px;
     margin-bottom: 20px;
+    /*background: #d2d2d2;*/
+}
+.login-container{
+    background: #fff;
+    border-radius: 10px;
+    border: solid #707070 1px;
 }
 
-.topo-login span{
-    height: 40px;
-    line-height: 40px;
-    vertical-align: bottom;
+.login-container div{
+    padding: 15px;
+}
+
+.login-container .col-md-6 .superior{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.login-container .col-md-6 .inferior{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+h1,h2,h3,h4{
+    color: #b22e38;
+    margin-top: 10px;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.btn-custom{
+    border-width: 1px;
+  border-color: rgb(112, 112, 112);
+  border-style: solid;
+  border-radius: 10px;
+  background-color: rgb(35, 31, 32);
+  width: 386px;
+  height: 48px;
+}
+
+#username, #key{
+    border-width: 1px;
+  border-color: rgb(112, 112, 112);
+  border-style: solid;
+  border-radius: 5px;
+}
+
+input{
+    margin-top: 15px;
+    border-width: 1px;
+  border-color: rgb(112, 112, 112);
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#logo-login{
+    width: 140px;
+    margin: 0 auto;
+    margin: 20px 20px 0px 50px;
+}
+
+.login-container .marcas {
+    padding: 0px;
+}
+
+.login-container .marcas ul{
+    padding: 0px;
+    padding-left: 15px;
+}
+
+.marcas ul li img{
+    width: 30px;
+}
+
+.login-container{
+    margin-top: 120px;
+}
+
+.login-container.col-md-6 .form-login{
+  margin-top: 15px;
+  border-width: 1px;
+  border-color: rgb(112, 112, 112);
+  border-style: solid;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+
+.login-container .checkbox{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.login-container .checkbox .label{
+    color: #333;
+    float: right;
+    margin-bottom: 15px;
+}
+
+.login-container .checkbox .label:hover{
+color: #b22e38;
+}
+
+.navbar-default.navbar-fixed-bottom a,
+.navbar-default.navbar-fixed-bottom{
+    background: #232020;
+    color: #fff;
+    height: 20px;
 }

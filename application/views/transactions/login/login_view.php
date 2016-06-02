@@ -1,3 +1,14 @@
+<?php
+/*atributos para o form_open*/
+
+    $attributes = array(
+            'role'=>"form",
+            'id' => 'login-form',
+            'method' => "post",
+            'autocomplete' => "off",
+    );
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,48 +23,38 @@
     <title>Working Time Flexibility</title>
 </head>
 <body>
-<div class="topo-login">
-<img id="logo-login" src="<?php echo base_url('img/sistema/logotipo/logo.png')?>" alt=""/>
-    <span>Working Time Flexibility</span>
-</div>
+<div class="container-fluid">
+<div class="ror">
 
-
-
-
-<div class="marcas">
-    <ul> 
-        <li><img src=<?php echo base_url('img/sistema/background/case_ih.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/steyr.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/case.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/nh_agricolture.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/nh_construction.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/iveco.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/iveco_astra.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/iveco_bus.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/heuliez_bus.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/iveco_magirus.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/iveco_defence.png' )?> ></li>
-        <li><img src=<?php echo base_url('img/sistema/background/fpt.png' )?> ></li>
-    </ul>
-</div>
-
-<?php
-/*atributos para o form_open*/
-
-    $attributes = array(
-            'role'=>"form",
-            'id' => 'login-form',
-            'method' => "post",
-            'autocomplete' => "off",
-    );
-?>
-
-<section id="login">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="form-wrap retrieve-table">
-                    <h2>Faça Login</h2>
+<div class="col-md-5  col-md-offset-3">
+    <div class="row login-container">
+        <di class="col-md-6">
+            <div class="row superior">
+                <img id="logo-login" src="<?php echo base_url('img/sistema/logotipo/logo.png' )?>" alt=""/>
+                <h3>Working Time Flexibility</h3>
+            </div>
+            <div class="row inferior">
+                <div class="marcas">
+                    <ul> 
+                        <li><img src=<?php echo base_url('img/sistema/background/case_ih.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/steyr.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/case.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/nh_agricolture.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/nh_construction.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/iveco.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/iveco_astra.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/iveco_bus.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/heuliez_bus.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/iveco_magirus.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/iveco_defence.png' )?> ></li>
+                        <li><img src=<?php echo base_url('img/sistema/background/fpt.png' )?> ></li>
+                    </ul>
+                </div>
+            </div>
+        </di>
+        <di class="col-md-6">
+            <div class="form-login">
+            <h1>LOGIN</h1>
                     <?php 
                         echo  validation_errors('<div class="alert alert-danger" role="alert">
                           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -68,45 +69,32 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
                             <label for="userid" class="sr-only">UserID</label>
                             <input type="userid" id="username" name="username" class="form-control" placeholder="Usuário" autofocus>
-                        </div>
 
-                        <div class="form-group">
                             <label for="key" class="sr-only">Senha</label>
                             <input type="password" name="password" id="key" class="form-control" placeholder="Senha">
-                        </div>
 
+                        <input type="submit" id="btn-login" class="form-control btn btn-custom btn-lg btn-block" value="ENTRAR">
                         <div class="checkbox">
-                            <span class="character-checkbox" onclick="showPassword()"></span>
-                            <span class="label">Exibir senha</span>
                             <a class="lembrar-senha" href="#" title=""><span class="label">Lembrar senha</span></a>
                         </div>
-                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Login">
                     </form>
-                    <hr>
-                    <img id="logo-login" src="<?php echo base_url('img/sistema/logotipo/logo.png' )?>" alt=""/>
-                </div>
-            </div> <!-- /.col-xs-12 -->
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
-</section>
-
-<footer id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <p>Desenvolvido por <strong><a href="http://www.bflabs.com.br/" target="_blank"> bf labs - soluções web</a></strong></p>
             </div>
-        </div>
+        </di>
     </div>
-</footer>
+</div>
+</div>
+</div>
 
 </body>
-</html>
+<nav class="navbar-default navbar-fixed-bottom" id='fixed'>
+    <div class="col-md-6  col-md-offset-4">
+        <span>Desenvolvido por <a href="http://www.bflabs.com.br/" target="_blank"> bf labs - soluções web</a></span>
+  </div>
+</nav>
 
- <script>
+<script>
                 $(function(){
                     // função que altera cor do menu
                     var url = window.location.href;

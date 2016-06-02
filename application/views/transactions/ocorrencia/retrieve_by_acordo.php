@@ -51,7 +51,13 @@ foreach ($interpretacao as $linha):
         <td>'. $linha->dsc_planta .'</td> 
         ';
         if( strlen($linha->dsc_file)>0){
-            $file = '<a target="_blank" href="'.base_url('uploads/'. $linha->dsc_file) .'" >Arquivo na Íntegra</a>';
+            $arquivos = split(';', $linha->dsc_file);
+            $file = '';
+            foreach ($arquivos as $key => $value) {
+              $retVal = ($key == 0) ? '' : ' ('.$key.')' ;
+              $file = $file.'<a target="_blank" href="'.base_url().'uploads/'. $value .'" >Arquivo na Íntegra'.$retVal.'</a><br>';
+            }
+            
         }else{
             $file ="<center>-</center>";
         }

@@ -17,11 +17,7 @@ $this->load->view('includes/head_site');
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <?php $this->load->view('includes/header_site'); ?>
-            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
-                <span class="hamb-top"></span>
-    			<span class="hamb-middle"></span>
-				<span class="hamb-bottom"></span>
-            </button>
+            
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-lg-offset-0">

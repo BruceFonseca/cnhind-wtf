@@ -65,13 +65,9 @@ array_unshift($plan_per, 'Descrição');
 $this->table->set_heading($plan_per);
 
 $new_list = $this->table->make_columns($linha);
-$tmpl = array ( 'table_open'  => '<table class="table table-striped table-hover">' );
-
-$this->table->set_template($tmpl);
 
 
-
-
+echo '<div class="row content-form">';
 echo '<div class="buttons-controle">';
 echo 
         '
@@ -90,10 +86,73 @@ echo
             </button>
         </a>
         ';  
-echo '</div>';
-echo '<div class="retrieve-table">';
+echo '</div></div>';
+echo '<div class="row content-form">';
+echo '<div class="row title-form"><h2>Tabela de Comparação</h2><hr></div>';
 
-    echo '<h2> Comparação entre Plantas, Períodos e Acordos</h2>';	
-		echo $this->table->generate($new_list);
-	echo '</div>';
+$tmpl = array ( 'table_open'  => '<table id="retrieve-usuario"  cellpadding="2" cellspacing="1" class="table table-striped table-hover">' );
+$this->table->set_template($tmpl);
+echo '<div class="row content-table">';
+       echo $this->table->generate($new_list);
+    echo '</div>';
 ?>
+
+<script>
+// tooltips Bootstrap
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="dropdown"]').tooltip();
+
+
+//data table
+$('#retrieve-usuario').DataTable({
+	"iDisplayLength": 50,
+    "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        "language": {
+    "sEmptyTable": "Nenhum registro encontrado",
+    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+    "sInfoEmpty": "Exibindo 0 até 0 de 0 registros",
+    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sInfoThousands": ".",
+    "sLengthMenu": "_MENU_ resultados por página",
+    "sLoadingRecords": "Carregando...",
+    "sProcessing": "Processando...",
+    "sZeroRecords": "Nenhum registro encontrado",
+    "sSearch": "Pesquisar",
+    "oPaginate": {
+        "sNext": "Próximo",
+        "sPrevious": "Anterior",
+        "sFirst": "Primeiro",
+        "sLast": "Último"
+    },
+    "oAria": {
+        "sSortAscending": ": Ordenar colunas de forma ascendente",
+        "sSortDescending": ": Ordenar colunas de forma descendente"
+    }
+}
+    } );
+
+//summernote WYSIWYG Editor
+$('#editoWYSIWYG').summernote({
+      height: 300,                 // set editor height
+      minHeight: null,             // set minimum height of editor
+      maxHeight: null,
+      toolbar: [
+              ['style', ['style']],
+              ['font', ['bold', 'italic', 'underline', 'clear']],
+              // ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+              ['fontname', ['fontname']],
+              ['fontsize', ['fontsize']],
+              //['color', ['color']],
+              ['para', ['ul', 'ol', 'paragraph']],
+              // ['height', ['height']],
+              // ['table', ['table']],
+              ['insert', ['link', 'picture', 'hr']],
+              // ['view', ['fullscreen'/*, 'codeview' */]],   // remove codeview button 
+              ['help', ['help']]
+            ],
+            lang: "pt-BR",
+    });
+
+
+</script>

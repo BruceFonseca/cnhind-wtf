@@ -241,7 +241,7 @@ class Ocorrencia_model extends CI_Model{
                 p.id_planta as id_planta,
                 p.dsc_planta as dsc_planta
                 FROM ocorrencia o
-                INNER JOIN planta p ON o.id_planta = p.id_planta'; 
+                INNER JOIN planta p ON o.id_planta = p.id_planta ORDER BY p.dsc_planta'; 
         return $this->db->query($query);
     }
 

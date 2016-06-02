@@ -213,13 +213,13 @@ html { height: 100%;}
 /*-------------------------------*/
 
 .hamburger {
-  position: fixed;
+  position: absolute;
   top: 10px;  
-  z-index: 999;
+  color: #fff;
+  z-index: 1111;
   display: block;
-  width: 32px;
+  width: 25px;
   height: 32px;
-  margin-left: 15px;
   margin-right: 15px;
   background: transparent;
   border: none;
@@ -231,6 +231,7 @@ html { height: 100%;}
 }
 .hamburger.is-closed:before {
   content: '';
+  margin-left: 210px;
   display: block;
   width: 100px;
   font-size: 14px;
@@ -262,7 +263,7 @@ html { height: 100%;}
 .hamburger.is-closed .hamb-top,
 .hamburger.is-closed .hamb-middle,
 .hamburger.is-closed .hamb-bottom {
-  background-color: #1a1a1a;
+  background-color: #E5E5E5;
 }
 .hamburger.is-closed .hamb-top { 
   top: 5px; 
@@ -288,7 +289,7 @@ html { height: 100%;}
 .hamburger.is-open .hamb-top,
 .hamburger.is-open .hamb-middle,
 .hamburger.is-open .hamb-bottom {
-  background-color: #1a1a1a;
+  background-color: #E5E5E5;
 }
 .hamburger.is-open .hamb-top,
 .hamburger.is-open .hamb-bottom {
@@ -478,10 +479,11 @@ a:link, a:visited,
 #plantas1, #plantas2, 
 #periodos1, #periodos2, 
 #acordos1, #acordos2{
-  min-height: 400px;
+  min-height: 500px;
   border: 2px solid #b32e38;
 
 }
+
 #plantas1 li:hover, #plantas2 li:hover, 
 #periodos1 li:hover, #periodos2 li:hover, 
 #acordos1 li:hover, #acordos2 li:hover{
@@ -489,6 +491,13 @@ a:link, a:visited,
   background: #b32e38;
   border: #b32e38;
   border-radius: 0;
+}
+
+#plantas1:hover, #plantas2:hover, 
+#periodos1:hover, #periodos2:hover, 
+#acordos1:hover, #acordos2:hover{
+  cursor: crosshair;
+
 }
 
 .sortable2 li:hover,
@@ -630,4 +639,45 @@ table.dataTable.no-footer {
 table.dataTable thead th, table.dataTable thead td {
     padding: 10px 18px;
     border-bottom: 1px solid #b32e38;
+}
+
+/*comparação*/
+#tabelacomparacao{
+  margin-top: 15px;
+}
+
+/*get conceito*/
+.get_conceito{
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+}
+
+.nav.navbar-nav.navbar-left{
+  margin-left: 30px;
+  display: block;
+}
+.nav.navbar-nav.navbar-right{
+position: absolute;
+top: -5px;
+right: 15px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+.nav.navbar-nav.navbar-left{
+  display: none;
+}
+}
+
+
+.alert-info {
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-danger, .alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
 }

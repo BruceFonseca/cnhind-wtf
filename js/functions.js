@@ -77,6 +77,8 @@ $('.delete-event').on('click', function(e){
 
 //data table
 $('#retrieve-usuario').DataTable({
+  "iDisplayLength": 50,
+    "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         "language": {
     "sEmptyTable": "Nenhum registro encontrado",
     "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -248,6 +250,7 @@ $('#adicionar-assunto').on('click', function(){
               }
       });
   });
+
 
 
 

@@ -11,6 +11,8 @@ foreach ($interpretacao as $linha):
     );
 endforeach;
 
+if (isset($interpretacao[0]->id_ocorrencia)) {
+    # code...
 echo '<div class="row content-form">
         <div class="buttons-controle">';
 echo 
@@ -31,6 +33,8 @@ echo
         </a>
         ';  
 echo '</div></div>';
+}
+
 
 echo '<div class="row">';
 echo '<div class="row content-form">';

@@ -316,7 +316,7 @@ class Ocorrencia extends CI_Controller{
             // Define file rules
             $this->upload->initialize(array(
                 "upload_path"       =>  $path,
-                "allowed_types"     =>  'text/plain|text|doc|docx|pdf|csv|png|jpeg',
+                "allowed_types"     =>  'pdf|csv',
                 // "max_size"          =>  '1000',
                 // "max_width"         =>  '1024',
                 // "max_height"        =>  '768'
@@ -338,7 +338,7 @@ class Ocorrencia extends CI_Controller{
                 // Output the errors
                 $errors = $this->upload->display_errors('<div class="alert alert-danger" role="alert">
                                                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>', 
-                                                        '<br>Favor inserir um arquivo com extensão <strong>text|doc|docx|pdf|csv|png|jpeg</strong></div>');              
+                                                        '<br>Favor inserir um arquivo com extensão <strong>pdf</strong></div>');              
                 echo $errors;
             }
             exit();

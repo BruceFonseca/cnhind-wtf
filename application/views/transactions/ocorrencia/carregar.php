@@ -40,7 +40,11 @@ endif;
                 // Output AJAX response to the div container
                 $(".upload-messages-esturtura-produto").html(response.responseText);
                 var name_file= $('input[name="atach-file"]').val();
-                popular_lista(name_file);
+              if (typeof name_file === "undefined") {
+                    alert('É necessário escolher um arquivo para fazer o upload.');
+                }else{
+                    popular_lista(name_file);
+                }
             }
         };  
         // Submit the form
@@ -57,14 +61,18 @@ endif;
         if (string.length) {
             $.each( array, function( key, arquivo ) {
               // alert( key + ": " + value );
-              var lista = '<li class="list-group-item"><span class="badge">x</span>'+arquivo+'</li>';
+              var lista = '<li class="list-group-item"><button class="remover-anexo close" data-dismiss="alert" type="button">×</button>'+arquivo+'</li>';
               $('#anexos').append(lista);
             });
         };
+
+        
+
     }); 
 
+
     function popular_lista(arquivo){
-        var lista = '<li class="list-group-item"><span class="badge">x</span>'+arquivo+'</li>';
+        var lista = '<li class="list-group-item"><button class="remover-anexo close" data-dismiss="alert" type="button">×</button>'+arquivo+'</li>';
         $('#anexos').append(lista);
     }
 
@@ -94,6 +102,9 @@ endif;
 
     });
 
+    $(document).on('click', '.remover-anexo', function(){
+        $(this).parent().remove();
+    });
     
 </script>
 

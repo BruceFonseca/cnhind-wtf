@@ -1,13 +1,12 @@
 <?php
 
 
-$this->table->set_heading('Item', 'Descrição', 'Anexo');
+$this->table->set_heading('Item', 'Descrição');
 
 
 foreach ($interpretacao as $linha):
 
     if( strlen($linha->dsc_file)>0){
-            $file = '<a target="_blank" href="'.base_url().'uploads/'. $linha->dsc_file .'" >Arquivo na Íntegra</a>';
     }else{
         $file ="<center>-</center>";
     }
@@ -16,8 +15,7 @@ foreach ($interpretacao as $linha):
     
     $this->table->add_row(
     $tratado, 
-    $linha->dsc_interpretacao, 
-    $file 
+    $linha->dsc_interpretacao
     );
 endforeach;
 

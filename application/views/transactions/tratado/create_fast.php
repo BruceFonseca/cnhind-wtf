@@ -53,7 +53,9 @@ echo form_close();
 				success: function( data )
 				{
 					$('#tratado div').remove();
-				$('#tratado').append(data);
+					$('#tratado').append(data);
+				    var last_assunto= $('#hide_last_assunto').html();
+    				$('.sortable1').append(last_assunto);
 				}
 			});
 
@@ -63,12 +65,10 @@ echo form_close();
 
 $('#tratado #fechar-apontamento-componente').on('click', function(){
 
-    var last_assunto= $('#hide_last_assunto').html();
 
     $('#background').hide();
     $('#tratado').hide();
     $('#tratado div').remove();
-    $('.sortable1').append(last_assunto);
     $('textarea').mousedown(function(e){ e.stopPropagation(); });
   });
 

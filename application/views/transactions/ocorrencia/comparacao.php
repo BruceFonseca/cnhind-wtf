@@ -1,5 +1,9 @@
 <?php
 echo '<div class="row-fluid">';
+echo'<div class="alert alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Atenção! </strong> Para gerar a comparação, arraste os itens entre "Disponíveis" "Comparando".
+</div>';
 
 echo '<div class="row title-form"><h2>Comparação entre Plantas, Períodos e Acordos</h2></div>'; 
 
@@ -42,8 +46,10 @@ echo '</div>';
 
 ?>
 </div>
+</div>
+</div>
 
-<div id="tabelacomparacao"></div>
+<div class="row"><div id="tabelacomparacao"></div></div>
 
 
 <script>
@@ -67,7 +73,7 @@ function popular_periodos(){
 		$('#periodos2 li').remove();
 		$('#acordos1 li').remove();
 		$('#acordos2 li').remove();
-		$('.tabela-comparacao table').remove();
+		$('#tabelacomparacao').empty();
 
 
 		var array = [];
@@ -101,7 +107,7 @@ function popular_acordos(){
 
 		$('#acordos1 li').remove();
 		$('#acordos2 li').remove();
-		$('.tabela-comparacao table').remove();
+		$('#tabelacomparacao').empty();
 
 		var plantas = [];
 		$("#plantas2 li").each(function() {

@@ -96,7 +96,7 @@ class Pdfgerar extends CI_Controller{
     public function gerar_pdf($dados, $orientação = "A4-L"){
 
         // As PDF creation takes a bit of memory, we're saving the created file in /downloads/reports/
-        $filename = "COE-Flexibilidade-" . date('Y_m_d_H_i_s');
+        $filename = "WTF-" . date('Y_m_d_H_i_s');
         $pdfFilePath = FCPATH."/downloads/reports/$filename.pdf";
 
         
